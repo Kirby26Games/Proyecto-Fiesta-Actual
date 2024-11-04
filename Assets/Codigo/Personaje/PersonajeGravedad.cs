@@ -8,7 +8,7 @@ public class PersonajeGravedad : MonoBehaviour
     PersonajeMovimiento Movimiento;
     public float Gravedad = -9.82f;
     public float LimiteVelocidadCaida;
-
+    public Vector3 DireccionGravedad;
 
     private void Awake()
     {
@@ -30,5 +30,6 @@ public class PersonajeGravedad : MonoBehaviour
         {
             Movimiento.Ejes.y += Gravedad * Time.deltaTime;
         }
+            DireccionGravedad = transform.up * Movimiento.Ejes.y;
     }
 }

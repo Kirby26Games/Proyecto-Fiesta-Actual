@@ -45,7 +45,7 @@ public class PersonajeMovimiento : MonoBehaviour
         DireccionXZ = new Vector3(Ejes.x,0,Ejes.z).normalized;
         DireccionFinal= transform.TransformDirection(DireccionXZ)*VelocidadFinal;
         DireccionFinal = Vector3.ProjectOnPlane(DireccionFinal, _Rayos.DatosPendiente.normal);
-        DireccionFinal.y += Ejes.y;
+        DireccionFinal += _Gravedad.DireccionGravedad;
         _RigidBody.linearVelocity = DireccionFinal;
 
     }
